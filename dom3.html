@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praktikum 9.3</title>
+    <title>Mengedit Atribute</title>
+    <style>
+        .bingkai{
+            border: 5px solid black;
+        }
+    </style>
 </head>
 <body>
-    <h2>Biaya Parkir</h2>
-    
-    <form>
-        Jam Masuk : <input type="number" id="masuk">
-        <br>
-        Jam Keluar : <input type="number" id="keluar">
-        <br>
-        <input type="button" value="Hitung" onclick="parkir();">
-        <br>
-        Biaya : <input type="text" id="biaya">
-    </form>
+    <h1>Belajar DOM Javascript</h1>
+    <img src="gorila.jpg" width=300 id="gambar">
+
+    <input type="text" value="Nama" id="input">
 
     <script>
-        function parkir() {
-            let m = document.getElementById("masuk").value;
+        let img = document.getElementById("gambar");
+         
+        img.width = 400;
 
-            let K = document.getElementById("keluar").value;
+        let input = document.getElementById("input");
+        input.value = "Nama Binatang";
 
-            let t = K - m;
+        // ------------ Buat Atribute ------------ 
+        img.setAttribute("class", "bingkai");
 
-            let tarif_awal = 3000;
-
-            let selisih_waktu = t - 2;
-
-            let tarif_lanjut = selisih_waktu * 1000;
-
-            let tarif_total = tarif_awal + tarif_lanjut;
-
-            document.getElementById("biaya").value = "Rp." + tarif_total;
-        }
+        // ------------ Edit CSS ------------ 
+        input.style.border = "3px solid black";
+        input.style.backgroundColor = "yellow";
     </script>
 </body>
 </html>

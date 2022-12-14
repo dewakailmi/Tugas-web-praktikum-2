@@ -4,50 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praktikum 9.2</title>
+    <title>Mengedit Element</title>
 </head>
 <body>
-    <h2>Dollar ke Rupiah</h2>
+    <h1>Belajar DOM Javascript</h1>
 
-    <form>
-        Dollar : <input type="number" id="dollar">
-        <br>
-        Kurs Rupiah : <input type="number" id="rupiah" value="14650">
-        <br>
-        <input type="button" value="Hitung" onclick="hitung_dollar();">
-        <br>
-        hasil : <input type="text" id="hasil">
-    </form>
-
-    <h2>Rupiah ke Dollar</h2>
-
-    <form>
-        Rupiah : <input type="number" id="rupiah2">
-        <br>
-        <input type="button" value="Hitung" onclick="hitung_rupiah();">
-        <br>
-        Dollar : <input type="text" id="hasil2" >
-    </form>
+    <div id="box1">
+        <div id="p1">Paragraf 1</div>
+    </div>
 
     <script>
-        function hitung_dollar() {
-            let d = document.getElementById("dollar").value;
+       
+        let el = document.createElement("h2");
+        let text = document.createTextNode("Belajar Web");
+        let box = document.getElementById("box1");
 
-            let r = document.getElementById("rupiah").value;
+      
+        el.appendChild(text);
+       
+        box.appendChild(el);
 
-            let h = d * r; 
+        let el2 = document.createElement("h2");
+        let text2 = document.createTextNode("Belajar Web");
+        
+        el2.appendChild(text2);
 
-            document.getElementById("hasil").value = "Rp" + h;
-        }
+        let p1 = document.getElementById("p1");
+        box.replaceChild(el2,p1);
 
-        function hitung_rupiah() {
-            let r = document.getElementById("rupiah2").value;
-            let h = r * (1/14650);
-
-            document.getElementById("hasil2").value = "$" + h.toFixed(2);
-
-        }
+        box.removeChild(el);
     </script>
-    
 </body>
-</html>
+</html>.
